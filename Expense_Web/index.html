@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+            <p>Manage your expenses efficiently</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="summary-card">
+                <div class="card-header">
+                    <h3>Total Expenses</h3>
+                </div>
+                <div class="card-body">
+                    <h2 id="total-amount">₹0.00</h2>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="card-header">
+                    <h3>This Month</h3>
+                </div>
+                <div class="card-body">
+                    <h2 id="month-amount">₹0.00</h2>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="card-header">
+                    <h3>Today's Expenses</h3>
+                </div>
+                <div class="card-body">
+                    <h2 id="today-amount">₹0.00</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" required placeholder="What did you spend on?">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (₹)</label>
+                    <input type="number" id="amount" required min="0" step="0.01" placeholder="How much?">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <button type="submit" id="submit-btn">Add Expense</button>
+            </form>
+        </div>
+
+        <div class="expenses-container">
+            <div class="expenses-header">
+                <h2>Expense History</h2>
+                <div class="filter-container">
+                    <input type="text" id="search-input" placeholder="Search expenses...">
+                    <select id="date-filter">
+                        <option value="all">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+            </div>
+            <div class="expense-list" id="expense-list">
+                <!-- Expenses will be loaded here dynamically -->
+                <div class="empty-state" id="empty-state">
+                    <i class="fas fa-receipt"></i>
+                    <p>No expenses found. Add your first expense!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for editing expenses -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Expense</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-description">Description</label>
+                    <input type="text" id="edit-description" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-amount">Amount (₹)</label>
+                    <input type="number" id="edit-amount" required min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="edit-date">Date</label>
+                    <input type="date" id="edit-date" required>
+                </div>
+                <button type="submit">Update Expense</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
