@@ -19,16 +19,16 @@ A **Spring Boot** backend with a **simple HTML, CSS, and JavaScript** frontend t
 ---
 
 ## 📂 Project Structure  
-/personal-expense-tracker │── backend/ # Spring Boot backend
-│ ├── src/main/java/com/example/expense
-│ │ ├── controller/ # API endpoints
-│ │ ├── model/ # Entity classes
-│ │ ├── repository/ # Database operations
-│ │ ├── service/ # Business logic
-│ ├── src/main/resources/
-│ │ ├── application.properties # Database config
-│── frontend/ # HTML, CSS, JS frontend
-│ ├── index.html # Main page
-│ ├── script.js # Fetch API calls
-│ ├── styles.css # Styling
+**/personal-expense-tracker │── backend/ # Spring Boot backend**
+**│ ├── src/main/java/com/example/expense**
+**│ │ ├── controller/ # API endpoints**
+**│ │ ├── model/ # Entity classes**
+**│ │ ├── repository/ # Database operations**
+**│ │ ├── service/ # Business logic**
+**│ ├── src/main/resources/**
+**│ │ ├── application.properties # Database config**
+**│── frontend/ # HTML, CSS, JS frontend**
+**│ ├── index.html # Main page**
+**│ ├── script.js # Fetch API calls**
+**│ ├── styles.css # Styling**
 
